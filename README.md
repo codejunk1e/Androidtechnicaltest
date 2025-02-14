@@ -25,6 +25,13 @@ Uses WorkManager to sync offline-added pupils when online and fetches paginated 
 - Pupils updates and additions are stored and marked as synced after successful upload.
 - The UI remembers edited data across rotations
 
+## Tests 🧪
+- UI tests to ensure apps functionality and stability
+
+![Tests Passing](tests.png)
+
 
 ## Potential Enhancements
 - Better Error Handling – Improve user feedback for network errors.
+- Better sync management - Track failed syncs due to FE error and be able to remove them.
+- Add more tests - Add more tests than the current tests available.

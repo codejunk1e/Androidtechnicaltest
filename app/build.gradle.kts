@@ -15,6 +15,7 @@ android {
         targetSdk = libs.versions.targetSdk.get().toInt()
         versionCode = libs.versions.versionCode.get().toInt()
         versionName = libs.versions.versionName.get()
+        testInstrumentationRunner = "com.bridge.androidtechnicaltest.config.CustomTestRunner"
     }
     buildTypes {
         release {
@@ -53,8 +54,16 @@ dependencies {
 
     implementation(libs.dagger.hiltAndroid)
     implementation(libs.androidx.junit.ktx)
+    androidTestImplementation(libs.androidx.core.testing)
+    androidTestImplementation(libs.androidx.test.rules)
+    implementation(libs.androidx.junit.ktx)
+    implementation(libs.androidx.work.testing)
+    debugImplementation(libs.androidx.ui.test.junit4.android)
+    debugImplementation(libs.androidx.runner)
     ksp(libs.dagger.hiltAndroidCompiler)
+    kspAndroidTest(libs.dagger.hiltAndroidCompiler)
     ksp(libs.dagger.hiltCompiler)
+    androidTestImplementation(libs.dagger.android.testing)
 
     implementation(libs.coil.svg)
     implementation(libs.coil)
